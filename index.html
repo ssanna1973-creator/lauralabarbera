@@ -197,7 +197,7 @@
             background: var(--text-color);
         }
 
-        /* Hero Section - NUOVO SFONDO: MAMMOGRAFIA 3D */
+        /* Hero Section */
         .hero {
             height: 100vh;
             width: 100%;
@@ -417,56 +417,7 @@
             color: var(--accent-color);
         }
 
-        /* Specialties Section */
-        .specialties {
-            background: var(--bg-color);
-        }
-
-        .specialties-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .specialty-card {
-            background: #fff;
-            padding: 50px 35px;
-            text-align: center;
-            transition: all 0.4s ease;
-            border: 1px solid transparent;
-        }
-
-        .specialty-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--light-gray);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
-        }
-
-        .specialty-icon {
-            font-size: 2.5rem;
-            color: var(--accent-color);
-            margin-bottom: 25px;
-            opacity: 0.8;
-        }
-
-        .specialty-card h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-weight: 400;
-            margin-bottom: 15px;
-            color: var(--text-color);
-        }
-
-        .specialty-card p {
-            font-size: 0.9rem;
-            line-height: 1.7;
-            color: #777;
-            font-weight: 300;
-        }
-
-        /* Focus Areas Section */
+        /* Focus Areas Section - AREE DI COMPETENZA */
         .focus-areas {
             background: linear-gradient(135deg, #f0eeeb 0%, #e8e4df 100%);
             padding: 100px 5%;
@@ -486,12 +437,63 @@
             border-radius: 4px;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            background: #fff;
+            padding: 20px;
         }
 
         .focus-image img {
             width: 100%;
             height: auto;
             display: block;
+        }
+
+        /* Gallery a due immagini */
+        .focus-images-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            align-items: start;
+        }
+
+        .focus-img-item {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            background: #fff;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .focus-img-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+        }
+
+        .focus-img-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .focus-img-item:hover img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 968px) {
+            .focus-images-gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .focus-images-gallery {
+                grid-template-columns: 1fr;
+            }
+            .focus-img-item img {
+                height: 280px;
+            }
         }
 
         .focus-content h2 {
@@ -538,7 +540,7 @@
             margin-bottom: 5px;
         }
 
-        /* Structure Section - SINGLE */
+        /* Structure Section */
         .structure-single {
             background: #fff;
             padding: 120px 5%;
@@ -936,10 +938,6 @@
                 gap: 50px;
             }
 
-            .specialties-grid {
-                grid-template-columns: 1fr;
-            }
-
             .instagram-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -1031,8 +1029,7 @@
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#chi-sono">Chi Sono</a></li>
-            <li><a href="#specializzazioni">Specializzazioni</a></li>
-            <li><a href="#ambiti">Ambiti</a></li>
+            <li><a href="#competenza">Aree di Competenza</a></li>
             <li><a href="#struttura">Struttura</a></li>
             <li><a href="#contatti">Contatti</a></li>
         </ul>
@@ -1047,13 +1044,12 @@
     <div class="mobile-menu" id="mobileMenu">
         <a href="#home" onclick="toggleMenu()">Home</a>
         <a href="#chi-sono" onclick="toggleMenu()">Chi Sono</a>
-        <a href="#specializzazioni" onclick="toggleMenu()">Specializzazioni</a>
-        <a href="#ambiti" onclick="toggleMenu()">Ambiti</a>
+        <a href="#competenza" onclick="toggleMenu()">Aree di Competenza</a>
         <a href="#struttura" onclick="toggleMenu()">Struttura</a>
         <a href="#contatti" onclick="toggleMenu()">Contatti</a>
     </div>
 
-    <!-- Hero Section - SFONDO MAMMOGRAFIA 3D -->
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-image"></div>
         <div class="hero-content">
@@ -1101,51 +1097,14 @@
         </div>
     </section>
 
-    <!-- Specialties Section -->
-    <section class="specialties" id="specializzazioni">
+    <!-- Aree di Competenza Section -->
+    <section class="focus-areas" id="competenza">
         <div class="section-header fade-in">
-            <h2>Specializzazioni</h2>
-            <p>Area di competenza</p>
+            <h2>Aree di Competenza</h2>
+            <p>Il mio campo di intervento</p>
         </div>
-        <div class="specialties-grid">
-            <div class="specialty-card fade-in">
-                <div class="specialty-icon">
-                    <i class="fas fa-x-ray"></i>
-                </div>
-                <h3>Diagnostica Senologica</h3>
-                <p>
-                    Mammografia 3D con tomosintesi, ecografia senologica e risonanza magnetica. 
-                    Screening e diagnosi precoce del carcinoma mammario.
-                </p>
-            </div>
-            <div class="specialty-card fade-in">
-                <div class="specialty-icon">
-                    <i class="fas fa-female"></i>
-                </div>
-                <h3>Diagnostica Ginecologica</h3>
-                <p>
-                    Ecografia transvaginale e addominale, diagnostica per immagini delle patologie 
-                    ginecologiche, follow-up post-trattamento.
-                </p>
-            </div>
-            <div class="specialty-card fade-in">
-                <div class="specialty-icon">
-                    <i class="fas fa-graduation-cap"></i>
-                </div>
-                <h3>Formazione & Ricerca</h3>
-                <p>
-                    Attività didattica presso la Scuola Italiana di Senologia ONLUS. 
-                    Ricerca clinica e divulgazione scientifica nel campo della senologia.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Focus Areas Section -->
-    <section class="focus-areas" id="ambiti">
         <div class="focus-container">
             <div class="focus-content fade-in">
-                <h2>Aree di interesse</h2>
                 <ul class="focus-list">
                     <li>
                         <div class="icon"><i class="fas fa-ribbon"></i></div>
@@ -1181,9 +1140,13 @@
                     </li>
                 </ul>
             </div>
-            <div class="focus-image fade-in">
-                <!-- IMMAGINE: mammografia 3D tomosintesi -->
-                <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80" alt="Mammografia 3D con tomosintesi">
+            <div class="focus-images-gallery fade-in">
+                <div class="focus-img-item">
+                    <img src="https://kimi-web-img.moonshot.cn/img/static.tecnichenuove.it/1c4a459a1b40951f86c34bcf62437341bf84300d.jpg" alt="Risonanza magnetica professionale - Diagnostica per immagini avanzata">
+                </div>
+                <div class="focus-img-item">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.allstatesmed.com/0ddeddf6216bde56f3cdcba20a20e8a387e43249.jpg" alt="Ecografo professionale in ambiente clinico">
+                </div>
             </div>
         </div>
     </section>
@@ -1231,27 +1194,27 @@
         </div>
         <div class="instagram-grid">
             <div class="instagram-item fade-in">
-                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&q=80" alt="Post Instagram 1">
+                <img src="https://kimi-web-img.moonshot.cn/img/images.squarespace-cdn.com/02739f499154689f98655b1e063c326f5c3710ea.jpg" alt="Nastro rosa - Prevenzione senologica">
                 <div class="instagram-overlay"><i class="fab fa-instagram"></i></div>
             </div>
             <div class="instagram-item fade-in">
-                <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=400&q=80" alt="Post Instagram 2">
+                <img src="https://kimi-web-img.moonshot.cn/img/www.thomsonmedical.com/b8bec109fa29f314e7ad7d263d84131048406219" alt="Ecografia senologica - Diagnostica avanzata">
                 <div class="instagram-overlay"><i class="fab fa-instagram"></i></div>
             </div>
             <div class="instagram-item fade-in">
-                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&q=80" alt="Post Instagram 3">
+                <img src="La-Barbera.jpg" alt="Dott.ssa Laura La Barbera - Radiologa Senologa">
                 <div class="instagram-overlay"><i class="fab fa-instagram"></i></div>
             </div>
             <div class="instagram-item fade-in">
-                <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=400&q=80" alt="Post Instagram 4">
+                <img src="https://kimi-web-img.moonshot.cn/img/thumbs.dreamstime.com/e18eed96c047cbb22e215b1cf038b4747dcc0bad.jpg" alt="Dottoressa che tiene le mani della paziente - Empatia e cura">
                 <div class="instagram-overlay"><i class="fab fa-instagram"></i></div>
             </div>
             <div class="instagram-item fade-in">
-                <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=400&q=80" alt="Post Instagram 5">
+                <img src="https://kimi-web-img.moonshot.cn/img/c8.alamy.com/773f1312f6264a64278298092fe7479a85e4009b.jpg" alt="Dottoressa con stetoscopio - Competenza medica">
                 <div class="instagram-overlay"><i class="fab fa-instagram"></i></div>
             </div>
             <div class="instagram-item fade-in">
-                <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?w=400&q=80" alt="Post Instagram 6">
+                <img src="https://kimi-web-img.moonshot.cn/img/gtslivingfoods.com/29958bc0412dfe5006daebe85acc488547774d50.jpg" alt="Fiore di loto - Rinascita e benessere femminile">
                 <div class="instagram-overlay"><i class="fab fa-instagram"></i></div>
             </div>
         </div>
@@ -1324,7 +1287,7 @@
             cursorDot.style.top = e.clientY - 2 + 'px';
         });
 
-        document.querySelectorAll('a, button, .specialty-card, .instagram-item, .contact-btn, .focus-list li, .structure-contact-btn').forEach(el => {
+        document.querySelectorAll('a, button, .instagram-item, .contact-btn, .focus-list li, .structure-contact-btn').forEach(el => {
             el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
             el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
         });
