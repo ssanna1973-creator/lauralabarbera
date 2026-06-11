@@ -409,6 +409,28 @@
             font-size: 0.8rem;
         }
 
+        .credential-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .credential-logo {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            flex-shrink: 0;
+            border-radius: 4px;
+        }
+
+        .credential-text {
+            flex: 1;
+        }
+
         .about-signature {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
@@ -1084,16 +1106,16 @@
                 </p>
                 <div class="about-credentials">
                     <div class="credential-item">
-                        <i class="fas fa-check"></i>
-                        <span>Docente della <a href="https://www.senologia.it/faculty/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color); text-decoration: underline;">Scuola Italiana di Senologia ONLUS</a></span>
+                        <img src="logoscuolasenologia.png" alt="Logo Scuola Italiana di Senologia" class="credential-logo">
+                        <span class="credential-text">Docente della <a href="https://www.senologia.it/faculty/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color); text-decoration: underline;">Scuola Italiana di Senologia ONLUS</a></span>
                     </div>
                     <div class="credential-item">
-                        <i class="fas fa-check"></i>
-                        <span>Membro del <a href="https://www.senologia.it/collegio-dei-senologi/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color); text-decoration: underline;">Collegio Italiano dei Senologi</a></span>
+                        <img src="Logocollegio senologi.png" alt="Logo Collegio Italiano dei Senologi" class="credential-logo">
+                        <span class="credential-text">Membro del <a href="https://www.senologia.it/collegio-dei-senologi/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color); text-decoration: underline;">Collegio Italiano dei Senologi</a></span>
                     </div>
                     <div class="credential-item">
-                        <i class="fas fa-check"></i>
-                        <span>Membro del Comitato Scientifico di <a href="https://www.endogenesi.com/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color); text-decoration: underline;">Endogenesi</a> — piattaforma online in Italia dedicata alla gestione dei sintomi dell'endometriosi</span>
+                        <img src="LogoEndogenesi.jpg" alt="Logo Endogenesi" class="credential-logo">
+                        <span class="credential-text">Membro del Comitato Scientifico di <a href="https://www.endogenesi.com/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color); text-decoration: underline;">Endogenesi</a> — piattaforma online in Italia dedicata alla gestione dei sintomi dell'endometriosi</span>
                     </div>
                 </div>
                 <div class="about-signature">Dott.ssa Laura La Barbera</div>
