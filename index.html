@@ -24,7 +24,7 @@
     <!-- ========== TWITTER CARDS ========== -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Dott.ssa Laura La Barbera | Radiologa Senologa Roma">
-    <meta name="twitter:description" content="Medico Radiologo specialista in Diagnostica Senologica, Ginecologica e Endometriosi. Mammografia 3D, RMN, Ecografia Senologica a Roma. ">
+    <meta name="twitter:description" content="Medico Radiologo specialista in Diagnostica Senologica, Ginecologica e Endometriosi. Mammografia 3D, RMN, Ecografia Senologica a Roma.">
 
     <!-- ========== SCHEMA.ORG - LOCAL BUSINESS JSON-LD ========== -->
     <script type="application/ld+json">
@@ -97,31 +97,35 @@
 
         /* Custom Cursor */
         .cursor {
-            width: 20px;
-            height: 20px;
-            border: 1px solid var(--text-color);
+            width: 28px;
+            height: 28px;
+            border: 2.5px solid rgba(255, 255, 255, 0.95);
             border-radius: 50%;
             position: fixed;
             pointer-events: none;
             z-index: 9999;
-            transition: transform 0.1s ease, opacity 0.2s ease, border-color 0.3s;
+            transition: transform 0.15s ease, opacity 0.2s ease, border-color 0.3s, background 0.3s;
             mix-blend-mode: difference;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.1);
         }
 
         .cursor-dot {
-            width: 4px;
-            height: 4px;
-            background: var(--text-color);
+            width: 7px;
+            height: 7px;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 50%;
             position: fixed;
             pointer-events: none;
             z-index: 9999;
             mix-blend-mode: difference;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
         }
 
         .cursor.hover {
-            transform: scale(2);
-            background: rgba(255,255,255,0.1);
+            transform: scale(1.6);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(90, 138, 138, 0.9);
+            box-shadow: 0 0 15px rgba(90, 138, 138, 0.3), 0 0 30px rgba(90, 138, 138, 0.1);
         }
 
         /* Loading Screen */
