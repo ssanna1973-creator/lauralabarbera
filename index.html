@@ -35,7 +35,7 @@
       "description": "Medico Radiologo specialista in Diagnostica Senologica, Ginecologica e Endometriosi",
       "url": "https://www.lauralabarbera.it/",
       "telephone": "+39 338 160 5587",
-      "email": "lauralabarbera@hotmail.it",
+      "email": "segreteria@lauralabarbera.it",
       "image": "La-Barbera.jpg",
       "address": {
         "@type": "PostalAddress",
@@ -326,10 +326,41 @@
             letter-spacing: 0.05em;
             line-height: 1.8;
             max-width: 600px;
-            margin: 0 auto;
+            margin: 0 auto 30px;
             opacity: 0;
             transform: translateY(20px);
             animation: fadeUp 1s ease forwards 0.9s;
+        }
+
+        .hero-contacts {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 1s ease forwards 1.2s;
+        }
+
+        .hero-contact-btn {
+            width: 48px;
+            height: 48px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-contact-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: #fff;
+            transform: translateY(-3px);
         }
 
         @keyframes fadeUp {
@@ -1148,6 +1179,23 @@
                 Specialista nella diagnosi delle patologie della donna. Senologia, ginecologia ed endometriosi: 
                 una medicina che unisce precisione scientifica e sensibilità umana.
             </p>
+            <div class="hero-contacts">
+                <a href="tel:+393381605587" class="hero-contact-btn" title="Telefono">
+                    <i class="fas fa-phone"></i>
+                </a>
+                <a href="mailto:segreteria@lauralabarbera.it" class="hero-contact-btn" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://wa.me/393381605587" class="hero-contact-btn" target="_blank" rel="noopener noreferrer" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/drlauralabarbera/" class="hero-contact-btn" target="_blank" rel="noopener noreferrer" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/laura-la-barbera-30094633/" class="hero-contact-btn" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
         </div>
         <div class="scroll-indicator" onclick="document.getElementById('chi-sono').scrollIntoView()">
             Scopri di più
@@ -1353,9 +1401,9 @@
                     <i class="fas fa-phone"></i>
                     <span>+39 338 160 5587</span>
                 </a>
-                <a href="mailto:lauralabarbera@hotmail.it" class="contact-method">
+                <a href="mailto:segreteria@lauralabarbera.it" class="contact-method">
                     <i class="fas fa-envelope"></i>
-                    <span>lauralabarbera@hotmail.it</span>
+                    <span>segreteria@lauralabarbera.it</span>
                 </a>
                 <a href="https://wa.me/393381605587" class="contact-method" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-whatsapp"></i>
@@ -1371,7 +1419,7 @@
                 </a>
             </div>
 
-            <a href="mailto:lauralabarbera@hotmail.it" class="contact-btn">Scrivimi</a>
+            <a href="mailto:segreteria@lauralabarbera.it" class="contact-btn">Scrivimi</a>
         </div>
     </section>
 
@@ -1391,7 +1439,7 @@
                 <a href="https://wa.me/393381605587" target="_blank" rel="noopener noreferrer" title="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="mailto:lauralabarbera@hotmail.it" title="Email">
+                <a href="mailto:segreteria@lauralabarbera.it" title="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
                 <a href="tel:+393381605587" title="Telefono">
