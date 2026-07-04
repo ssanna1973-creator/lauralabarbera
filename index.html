@@ -678,6 +678,53 @@
             display: block;
         }
 
+        .structure-images-gallery {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .structure-img-item {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            background: #fff;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .structure-img-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+        }
+
+        .structure-img-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .structure-img-item:hover img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 968px) {
+            .structure-images-gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .structure-images-gallery {
+                grid-template-columns: 1fr;
+            }
+            .structure-img-item img {
+                height: 280px;
+            }
+        }
+
         .structure-single-content h2 {
             font-family: 'Cormorant Garamond', serif;
             font-size: clamp(1.8rem, 3vw, 2.5rem);
@@ -1197,13 +1244,14 @@
             <div class="about-content fade-in">
                 <p class="role">Chi Sono</p>
                 <h2>Una medicina che unisce precisione scientifica e sensibilità umana</h2>
-                <p>
+                <p style="text-align: justify;">
                     Sono la Dott.ssa Laura La Barbera, Medico Radiologo con oltre 15 anni di esperienza nella diagnosi 
                     delle patologie della donna, sia in ambito senologico che ginecologico.
                 </p>
-                <p>
-                    Mi dedico con passione alla prevenzione, alla diagnosi precoce e alla cura dell'endometriosi, 
-                    promuovendo un approccio alla medicina che pone la paziente al centro.
+                <p style="text-align: justify;">
+                    Mi dedico con passione alla prevenzione, alla diagnosi precoce del tumore al seno e alla diagnostica 
+                    ultraspecialistica in risonanza magnetica delle patologie ginecologiche, con particolare riguardo 
+                    all'endometriosi, promuovendo un approccio alla medicina che pone la paziente al centro.
                 </p>
                 <div class="about-credentials">
                     <div class="credential-item">
@@ -1237,32 +1285,40 @@
                         <div class="icon"><i class="fas fa-ribbon"></i></div>
                         <div>
                             <strong>Senologia</strong>
-                            Prevenzione, screening e diagnosi precoce delle patologie mammarie. 
-                            Mammografia 3D, ecografia senologica e RM mammaria.
+                            <p style="text-align: justify;">Prevenzione, screening e diagnosi precoce delle patologie mammarie. 
+                            Mammografia 3D, ecografia senologica e RM mammaria.</p>
                         </div>
                     </li>
                     <li>
                         <div class="icon"><i class="fas fa-heartbeat"></i></div>
                         <div>
                             <strong>Endometriosi</strong>
-                            Diagnosi e gestione dell'endometriosi attraverso imaging avanzato. 
-                            Un approccio multidisciplinare per una patologia spesso sottodiagnosticata.
+                            <p style="text-align: justify;">Diagnosi e gestione dell'endometriosi attraverso imaging avanzato. 
+                            Un approccio multidisciplinare per una patologia spesso sottodiagnosticata.</p>
                         </div>
                     </li>
                     <li>
                         <div class="icon"><i class="fas fa-shield-alt"></i></div>
                         <div>
                             <strong>Ginecologia</strong>
-                            Diagnostica per immagini in ambito ginecologico, dal controllo routinario 
-                            al follow-up di patologie benigne e maligne.
+                            <p style="text-align: justify;">Diagnostica per immagini in ambito ginecologico, dal controllo routinario 
+                            al follow-up di patologie benigne e maligne.</p>
                         </div>
                     </li>
                     <li>
                         <div class="icon"><i class="fas fa-hand-holding-heart"></i></div>
                         <div>
                             <strong>Medicina della Donna</strong>
-                            Un percorso di cura globale che accompagna la donna in ogni fase della vita, 
-                            con empatia e competenza.
+                            <p style="text-align: justify;">Un percorso di cura globale che accompagna la donna in ogni fase della vita, 
+                            con empatia e competenza.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon"><i class="fas fa-snowflake"></i></div>
+                        <div>
+                            <strong>Crioablazione Nodulo Mammario</strong>
+                            <p style="text-align: justify;">Trattamento mini-invasivo per la distruzione per via percutanea dei noduli 
+                            mammari benigni mediante congelamento, offrendo un'alternativa efficace alla chirurgia.</p>
                         </div>
                     </li>
                 </ul>
@@ -1286,8 +1342,13 @@
 
         <!-- Prima struttura: Nuova Villa Claudia -->
         <div class="structure-single-container">
-            <div class="structure-single-image fade-in">
-                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80" alt="Nuova Villa Claudia">
+            <div class="structure-images-gallery fade-in">
+                <div class="structure-img-item">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80" alt="Nuova Villa Claudia">
+                </div>
+                <div class="structure-img-item">
+                    <img src="RMN3TESLA.jpeg" alt="Risonanza Magnetica 3 Tesla - Siemens Healthineers">
+                </div>
             </div>
             <div class="structure-single-content fade-in">
                 <h2><a href="https://nuovavillaclaudia.it/" target="_blank" rel="noopener noreferrer" style="color: var(--text-color); text-decoration: none;">Nuova Villa Claudia</a></h2>
@@ -1301,7 +1362,6 @@
                     <li>Mammografia 3D con tomosintesi</li>
                     <li>Ecografia senologica</li>
                     <li>Risonanza Magnetica</li>
-                    <li>Crioablazione Nodulo Mammario</li>
                     <li>Senologia</li>
                 </ul>
                 <a href="https://nuovavillaclaudia.it/contatti-e-recapiti/" target="_blank" rel="noopener noreferrer" class="structure-contact-btn"><i class="fas fa-address-book"></i> Contatti Villa Claudia</a>
@@ -1313,8 +1373,16 @@
 
         <!-- Seconda struttura: Hub Senologia Avanzata -->
         <div class="structure-single-container" style="margin-top: 80px;">
-            <div class="structure-single-image fade-in">
-                <img src="hubsenologia.jpeg" alt="Hub Senologia Avanzata - Reception">
+            <div class="structure-images-gallery fade-in">
+                <div class="structure-img-item">
+                    <img src="hubsenologia.jpeg" alt="Hub Senologia Avanzata - Reception">
+                </div>
+                <div class="structure-img-item">
+                    <img src="Mammografo.jpeg" alt="Mammografo 3D con tomosintesi - GE Healthcare">
+                </div>
+                <div class="structure-img-item">
+                    <img src="Ecografo.jpeg" alt="Ecografo senologico con AI - Samsung">
+                </div>
             </div>
             <div class="structure-single-content fade-in">
                 <h2><a href="https://hubsenologiaavanzata.it/" target="_blank" rel="noopener noreferrer" style="color: var(--text-color); text-decoration: none;">Hub Senologia Avanzata</a></h2>
