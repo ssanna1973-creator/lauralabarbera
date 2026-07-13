@@ -166,6 +166,9 @@
             margin-top: 15px;
             color: #999;
             font-weight: 300;
+            text-align: center;
+            max-width: 90%;
+            line-height: 1.6;
         }
 
         @keyframes pulse {
@@ -1167,6 +1170,164 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+
+        /* Consulenza Section */
+        .consulenza {
+            background: linear-gradient(135deg, #f8f6f3 0%, #f0eeeb 100%);
+            padding: 120px 5%;
+        }
+
+        .consulenza-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .consulenza-form {
+            background: #fff;
+            padding: 60px 50px;
+            border-radius: 4px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid var(--light-gray);
+            border-radius: 2px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: var(--text-color);
+            background: #fafafa;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--medical-teal);
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(90, 138, 138, 0.08);
+        }
+
+        .form-group textarea {
+            min-height: 160px;
+            resize: vertical;
+            line-height: 1.7;
+        }
+
+        .form-group select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238b7355' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .form-submit-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 18px 40px;
+            background: var(--text-color);
+            color: #fff;
+            border: 1px solid var(--text-color);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border-radius: 2px;
+        }
+
+        .form-submit-btn:hover {
+            background: transparent;
+            color: var(--text-color);
+        }
+
+        .form-submit-btn i {
+            font-size: 0.9rem;
+        }
+
+        .form-note {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 25px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .form-note i {
+            color: var(--medical-teal);
+            margin-right: 6px;
+        }
+
+        /* Messaggio di conferma */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .form-success i {
+            font-size: 3rem;
+            color: var(--medical-teal);
+            margin-bottom: 25px;
+        }
+
+        .form-success h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .form-success p {
+            font-size: 0.95rem;
+            color: #666;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+            .consulenza-form {
+                padding: 40px 25px;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -1188,6 +1349,7 @@
             <li><a href="#chi-sono">Chi Sono</a></li>
             <li><a href="#competenza">Aree di Competenza</a></li>
             <li><a href="#strutture">Strutture</a></li>
+            <li><a href="#consulenza">Consulenza</a></li>
             <li><a href="#contatti">Contatti</a></li>
         </ul>
         <div class="menu-toggle" onclick="toggleMenu()">
@@ -1203,6 +1365,7 @@
         <a href="#chi-sono" onclick="toggleMenu()">Chi Sono</a>
         <a href="#competenza" onclick="toggleMenu()">Aree di Competenza</a>
         <a href="#strutture" onclick="toggleMenu()">Strutture</a>
+        <a href="#consulenza" onclick="toggleMenu()">Consulenza</a>
         <a href="#contatti" onclick="toggleMenu()">Contatti</a>
     </div>
 
@@ -1447,6 +1610,75 @@
         </div>
     </section>
 
+
+    <!-- Consulenza Section -->
+    <section class="consulenza" id="consulenza">
+        <div class="section-header fade-in">
+            <h2>Richiedi Consulenza</h2>
+            <p>Compila il modulo per una richiesta personalizzata</p>
+        </div>
+        <div class="consulenza-container fade-in">
+            <div class="consulenza-form" id="consulenzaFormContainer">
+                <form id="consulenzaForm" action="https://formsubmit.co/segreteria@lauralabarbera.it" method="POST">
+                    <!-- Configurazione FormSubmit -->
+                    <input type="hidden" name="_subject" value="Nuova richiesta di consulenza - Dott.ssa La Barbera">
+                    <input type="hidden" name="_template" value="box">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://www.lauralabarbera.it/#consulenza">
+
+                    <div class="form-group">
+                        <label for="tipoConsulenza">Tipo di Consulenza *</label>
+                        <select name="Tipo_Consulenza" id="tipoConsulenza" required>
+                            <option value="" disabled selected>Seleziona il tipo di consulenza</option>
+                            <option value="Senologia">Senologia</option>
+                            <option value="Endometriosi">Endometriosi</option>
+                            <option value="Ginecologia">Ginecologia</option>
+                            <option value="Medicina della Donna">Medicina della Donna</option>
+                            <option value="Crioablazione Nodulo Mammario">Crioablazione Nodulo Mammario</option>
+                            <option value="Altro">Altro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="messaggioConsulenza">Descrivi di quale consulenza hai bisogno *</label>
+                        <textarea name="Messaggio" id="messaggioConsulenza" placeholder="Descrivi brevemente la tua richiesta, i tuoi sintomi o le tue necessità..." required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nomeConsulenza">Nome e Cognome *</label>
+                            <input type="text" name="Nome_Cognome" id="nomeConsulenza" placeholder="Maria Rossi" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefonoConsulenza">Telefono *</label>
+                            <input type="tel" name="Telefono" id="telefonoConsulenza" placeholder="+39 3xx xxx xxxx" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emailConsulenza">Email *</label>
+                        <input type="email" name="Email" id="emailConsulenza" placeholder="nome@email.it" required>
+                    </div>
+
+                    <button type="submit" class="form-submit-btn">
+                        <i class="fas fa-paper-plane"></i> Invia Richiesta
+                    </button>
+
+                    <p class="form-note">
+                        <i class="fas fa-shield-alt"></i>
+                        I tuoi dati saranno trattati in conformità con il GDPR. Riceverai una risposta entro 24-48 ore lavorative.
+                    </p>
+                </form>
+
+                <div class="form-success" id="formSuccess">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Richiesta Inviata</h3>
+                    <p>Grazie per averci contattato. La segreteria ti risponderà al più presto all'indirizzo email o al numero di telefono indicato.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="contact" id="contatti">
         <div class="fade-in">
@@ -1568,6 +1800,36 @@
                 heroImage.style.transform = `translateY(${scrolled * 0.4}px)`;
             }
         });
+
+        // Consulenza Form - Gestione invio
+        const consulenzaForm = document.getElementById('consulenzaForm');
+        const formSuccess = document.getElementById('formSuccess');
+
+        if (consulenzaForm) {
+            consulenzaForm.addEventListener('submit', function(e) {
+                // Il form viene inviato normalmente a FormSubmit
+                // Mostriamo il messaggio di conferma dopo un breve ritardo
+                setTimeout(() => {
+                    consulenzaForm.style.display = 'none';
+                    if (formSuccess) {
+                        formSuccess.style.display = 'block';
+                    }
+                }, 500);
+            });
+        }
+
+        // Gestione parametro URL per messaggio di conferma dopo redirect
+        if (window.location.hash === '#consulenza') {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('success') || document.referrer.includes('formsubmit.co')) {
+                const consulenzaFormEl = document.getElementById('consulenzaForm');
+                const formSuccessEl = document.getElementById('formSuccess');
+                if (consulenzaFormEl && formSuccessEl) {
+                    consulenzaFormEl.style.display = 'none';
+                    formSuccessEl.style.display = 'block';
+                }
+            }
+        }
     </script>
 </body>
 </html>
