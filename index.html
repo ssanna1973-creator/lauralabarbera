@@ -1615,7 +1615,7 @@
     <section class="consulenza" id="consulenza">
         <div class="section-header fade-in">
             <h2>Richiedi Consulenza</h2>
-            <p>Compila il modulo per una richiesta personalizzata</p>
+            <p><a href="#consulenza" id="nuova-richiesta-link" style="color: var(--accent-color); text-decoration: none; border-bottom: 1px solid var(--accent-color); padding-bottom: 2px; transition: all 0.3s ease; cursor: pointer;" onclick="resetForm(); return false;">Compila il modulo per una richiesta personalizzata</a></p>
         </div>
         <div class="consulenza-container fade-in">
             <div class="consulenza-form" id="consulenzaFormContainer">
@@ -1672,6 +1672,9 @@
                     <i class="fas fa-check-circle"></i>
                     <h3>Richiesta Inviata</h3>
                     <p>Grazie per avermi contattato. Risponderò al più presto all'indirizzo email o al numero di telefono indicato.</p>
+                    <button type="button" class="form-submit-btn" style="margin-top: 30px; max-width: 300px;" onclick="resetForm()">
+                        <i class="fas fa-redo"></i> Invia nuova richiesta
+                    </button>
                 </div>
             </div>
         </div>
@@ -1814,6 +1817,25 @@
                     }
                 }, 500);
             });
+        }
+
+        // Funzione per resettare il form e mostrarlo di nuovo
+        function resetForm() {
+            if (consulenzaForm) {
+                consulenzaForm.reset();
+                consulenzaForm.style.display = 'block';
+            }
+            if (formSuccess) {
+                formSuccess.style.display = 'none';
+            }
+            // Rimuovi il parametro success dall'URL senza ricaricare la pagina
+            if (window.history.replaceState) {
+                const url = new URL(window.location.href);
+                url.searchParams.delete('success');
+                window.history.replaceState({}, document.title, url.toString());
+            }
+            // Scrolla al form
+            document.getElementById('consulenzaFormContainer').scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
         // Gestione messaggio di conferma dopo redirect da FormSubmit
