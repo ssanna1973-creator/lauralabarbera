@@ -1624,7 +1624,7 @@
                     <input type="hidden" name="_subject" value="Nuova richiesta di consulenza - Dott.ssa La Barbera">
                     <input type="hidden" name="_template" value="box">
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://www.lauralabarbera.it/#consulenza">
+                    <input type="hidden" name="_next" id="formNextUrl" value="">
 
                     <div class="form-group">
                         <label for="tipoConsulenza">Tipo di Consulenza *</label>
@@ -1671,7 +1671,7 @@
                 <div class="form-success" id="formSuccess">
                     <i class="fas fa-check-circle"></i>
                     <h3>Richiesta Inviata</h3>
-                    <p>Grazie per averci contattato. La segreteria ti risponderà al più presto all'indirizzo email o al numero di telefono indicato.</p>
+                    <p>Grazie per avermi contattato. Risponderò al più presto all'indirizzo email o al numero di telefono indicato.</p>
                 </div>
             </div>
         </div>
@@ -1816,16 +1816,23 @@
             });
         }
 
-        // Gestione parametro URL per messaggio di conferma dopo redirect
-        if (window.location.hash === '#consulenza') {
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.has('success') || document.referrer.includes('formsubmit.co')) {
-                const consulenzaFormEl = document.getElementById('consulenzaForm');
-                const formSuccessEl = document.getElementById('formSuccess');
-                if (consulenzaFormEl && formSuccessEl) {
-                    consulenzaFormEl.style.display = 'none';
-                    formSuccessEl.style.display = 'block';
-                }
+        // Gestione messaggio di conferma dopo redirect da FormSubmit
+        // Imposta l'URL di redirect dinamicamente (funziona sia in locale che online)
+        const formNextUrl = document.getElementById('formNextUrl');
+        if (formNextUrl) {
+            const baseUrl = window.location.href.split('#')[0];
+            formNextUrl.value = baseUrl + '?success=1#consulenza';
+        }
+
+        // Mostra messaggio di conferma se torniamo da FormSubmit con ?success=1#consulenza
+        if (window.location.search.includes('success=1') && window.location.hash === '#consulenza') {
+            const consulenzaFormEl = document.getElementById('consulenzaForm');
+            const formSuccessEl = document.getElementById('formSuccess');
+            if (consulenzaFormEl && formSuccessEl) {
+                consulenzaFormEl.style.display = 'none';
+                formSuccessEl.style.display = 'block';
+                // Scrolla alla sezione consulenza
+                document.getElementById('consulenza').scrollIntoView({ behavior: 'smooth' });
             }
         }
     </script>
