@@ -1500,6 +1500,75 @@
         </div>
     </section>
 
+    <!-- Consulenza Section -->
+    <section class="consulenza" id="consulenza">
+        <div class="section-header fade-in">
+            <h2>Richiedi Consulenza</h2>
+            <p><a href="#consulenza" id="nuova-richiesta-link" style="color: var(--accent-color); text-decoration: none; border-bottom: 1px solid var(--accent-color); padding-bottom: 2px; transition: all 0.3s ease; cursor: pointer;" onclick="resetForm(); return false;">Compila il modulo per una richiesta personalizzata</a></p>
+        </div>
+        <div class="consulenza-container fade-in">
+            <div class="consulenza-form" id="consulenzaFormContainer">
+                <form id="consulenzaForm" action="https://formsubmit.co/laura@lauralabarbera.it" method="POST">
+                    <!-- Configurazione FormSubmit -->
+                    <input type="hidden" name="_subject" value="Nuova richiesta di consulenza - Dott.ssa La Barbera">
+                    <input type="hidden" name="_template" value="box">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" id="formNextUrl" value="">
+
+                    <div class="form-group">
+                        <label for="tipoConsulenza">Tipo di Consulenza *</label>
+                        <select name="Tipo_Consulenza" id="tipoConsulenza" required>
+                            <option value="" disabled selected>Seleziona il tipo di consulenza</option>
+                            <option value="Senologia">Senologia</option>
+                            <option value="Endometriosi">Endometriosi</option>
+                            <option value="Crioablazione Nodulo Mammario">Crioablazione Nodulo Mammario</option>
+                            <option value="Altro">Altro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="messaggioConsulenza">Descrivi di quale consulenza hai bisogno *</label>
+                        <textarea name="Messaggio" id="messaggioConsulenza" placeholder="Descrivi brevemente la tua richiesta, i tuoi sintomi o le tue necessità..." required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nomeConsulenza">Nome e Cognome *</label>
+                            <input type="text" name="Nome_Cognome" id="nomeConsulenza" placeholder="Maria Rossi" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefonoConsulenza">Telefono *</label>
+                            <input type="tel" name="Telefono" id="telefonoConsulenza" placeholder="+39 3xx xxx xxxx" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emailConsulenza">Email *</label>
+                        <input type="email" name="Email" id="emailConsulenza" placeholder="nome@email.it" required>
+                    </div>
+
+                    <button type="submit" class="form-submit-btn">
+                        <i class="fas fa-paper-plane"></i> Invia Richiesta
+                    </button>
+
+                    <p class="form-note">
+                        <i class="fas fa-shield-alt"></i>
+                        I tuoi dati saranno trattati in conformità con il GDPR. Riceverai una risposta entro 24-48 ore lavorative.
+                    </p>
+                </form>
+
+                <div class="form-success" id="formSuccess">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Richiesta Inviata</h3>
+                    <p>Grazie per avermi contattato. Risponderò al più presto all'indirizzo email o al numero di telefono indicato.</p>
+                    <button type="button" class="form-submit-btn" style="margin-top: 30px; max-width: 300px;" onclick="resetForm()">
+                        <i class="fas fa-redo"></i> Invia nuova richiesta
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Structure Section - DOVE RICEVO -->
     <section class="structure-single" id="strutture">
         <div class="section-header fade-in">
@@ -1610,75 +1679,6 @@
         </div>
     </section>
 
-
-    <!-- Consulenza Section -->
-    <section class="consulenza" id="consulenza">
-        <div class="section-header fade-in">
-            <h2>Richiedi Consulenza</h2>
-            <p><a href="#consulenza" id="nuova-richiesta-link" style="color: var(--accent-color); text-decoration: none; border-bottom: 1px solid var(--accent-color); padding-bottom: 2px; transition: all 0.3s ease; cursor: pointer;" onclick="resetForm(); return false;">Compila il modulo per una richiesta personalizzata</a></p>
-        </div>
-        <div class="consulenza-container fade-in">
-            <div class="consulenza-form" id="consulenzaFormContainer">
-                <form id="consulenzaForm" action="https://formsubmit.co/laura@lauralabarbera.it" method="POST">
-                    <!-- Configurazione FormSubmit -->
-                    <input type="hidden" name="_subject" value="Nuova richiesta di consulenza - Dott.ssa La Barbera">
-                    <input type="hidden" name="_template" value="box">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" id="formNextUrl" value="">
-
-                    <div class="form-group">
-                        <label for="tipoConsulenza">Tipo di Consulenza *</label>
-                        <select name="Tipo_Consulenza" id="tipoConsulenza" required>
-                            <option value="" disabled selected>Seleziona il tipo di consulenza</option>
-                            <option value="Senologia">Senologia</option>
-                            <option value="Endometriosi">Endometriosi</option>
-                            <option value="Crioablazione Nodulo Mammario">Crioablazione Nodulo Mammario</option>
-                            <option value="Altro">Altro</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="messaggioConsulenza">Descrivi di quale consulenza hai bisogno *</label>
-                        <textarea name="Messaggio" id="messaggioConsulenza" placeholder="Descrivi brevemente la tua richiesta, i tuoi sintomi o le tue necessità..." required></textarea>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="nomeConsulenza">Nome e Cognome *</label>
-                            <input type="text" name="Nome_Cognome" id="nomeConsulenza" placeholder="Maria Rossi" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="telefonoConsulenza">Telefono *</label>
-                            <input type="tel" name="Telefono" id="telefonoConsulenza" placeholder="+39 3xx xxx xxxx" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="emailConsulenza">Email *</label>
-                        <input type="email" name="Email" id="emailConsulenza" placeholder="nome@email.it" required>
-                    </div>
-
-                    <button type="submit" class="form-submit-btn">
-                        <i class="fas fa-paper-plane"></i> Invia Richiesta
-                    </button>
-
-                    <p class="form-note">
-                        <i class="fas fa-shield-alt"></i>
-                        I tuoi dati saranno trattati in conformità con il GDPR. Riceverai una risposta entro 24-48 ore lavorative.
-                    </p>
-                </form>
-
-                <div class="form-success" id="formSuccess">
-                    <i class="fas fa-check-circle"></i>
-                    <h3>Richiesta Inviata</h3>
-                    <p>Grazie per avermi contattato. Risponderò al più presto all'indirizzo email o al numero di telefono indicato.</p>
-                    <button type="button" class="form-submit-btn" style="margin-top: 30px; max-width: 300px;" onclick="resetForm()">
-                        <i class="fas fa-redo"></i> Invia nuova richiesta
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Contact Section -->
     <section class="contact" id="contatti">
