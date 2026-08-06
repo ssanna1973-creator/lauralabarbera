@@ -1328,6 +1328,81 @@
             }
         }
 
+
+        /* Reviews Banner Section */
+        .reviews-banner {
+            background: linear-gradient(135deg, #f8f6f3 0%, #edeae6 100%);
+            padding: 100px 5%;
+            text-align: center;
+            border-top: 1px solid var(--light-gray);
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .reviews-banner-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .reviews-banner-stars {
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .reviews-banner-stars i {
+            color: #f4b400;
+            font-size: 1.3rem;
+        }
+
+        .reviews-banner h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 300;
+            color: var(--text-color);
+            margin-bottom: 12px;
+            letter-spacing: 0.03em;
+        }
+
+        .reviews-banner-sub {
+            font-size: 0.9rem;
+            color: #777;
+            font-weight: 300;
+            margin-bottom: 35px;
+            letter-spacing: 0.05em;
+        }
+
+        .reviews-banner-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 40px;
+            background: var(--text-color);
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 400;
+            transition: all 0.4s ease;
+            border: 1px solid var(--text-color);
+            border-radius: 2px;
+        }
+
+        .reviews-banner-link:hover {
+            background: transparent;
+            color: var(--text-color);
+        }
+
+        .reviews-banner-link i {
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .reviews-banner {
+                padding: 70px 5%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1680,7 +1755,25 @@
     </section>
 
 
-    <!-- Contact Section -->
+    <!-- Reviews Banner Section -->
+    <section class="reviews-banner">
+        <div class="reviews-banner-content fade-in">
+            <div class="reviews-banner-stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <h2>Cosa dicono le mie pazienti</h2>
+            <p class="reviews-banner-sub">Scopri le esperienze di chi mi ha affidato la propria salute</p>
+            <a href="https://g.page/r/CaiV5JhrIBQ-EBM/review" target="_blank" rel="noopener noreferrer" class="reviews-banner-link">
+                <i class="fab fa-google"></i> Leggi le recensioni su Google
+            </a>
+        </div>
+    </section>
+
+        <!-- Contact Section -->
     <section class="contact" id="contatti">
         <div class="fade-in">
             <h2>I miei contatti</h2>
